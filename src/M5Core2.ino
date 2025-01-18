@@ -25,9 +25,9 @@ int JPEGDraw(JPEGDRAW *pDraw)
 
 void setup() {
   Serial.begin(115200);
-  
+
   Serial.println("Starting...");
-  
+
 M5.begin(true, true, true, true);
 M5.Lcd.fillScreen(TFT_BLACK);
 } /* setup() */
@@ -44,9 +44,9 @@ int iCenterY[4] = {0,60,90,105};
     M5.Lcd.fillScreen(TFT_BLACK);
     M5.Lcd.startWrite(); // Not sharing TFT bus on PyPortal, just CS once and leave it
     if (jpeg.openFLASH((uint8_t *)thumb_test, sizeof(thumb_test), JPEGDraw))
-    //if (jpeg.openFLASH((uint8_t *)ncc1701, sizeof(ncc1701), JPEGDraw))
-    //if (jpeg.openFLASH((uint8_t *)batman, sizeof(batman), JPEGDraw))
-    
+//    if (jpeg.openFLASH((uint8_t *)ncc1701, sizeof(ncc1701), JPEGDraw))
+//    if (jpeg.openFLASH((uint8_t *)batman, sizeof(batman), JPEGDraw))
+
     {
       lTime = micros();
       if (jpeg.hasThumb()) {jpeg.decode(iCenterX[i],iCenterY[i],JPEG_EXIF_THUMBNAIL | iOption[i]); } else { jpeg.decode(iCenterX[i],iCenterY[i], iOption[i]); }
